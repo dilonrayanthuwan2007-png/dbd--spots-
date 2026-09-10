@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="LvrXQxRYSIE8m2-zR5uZ1M2egEFaFc7QtwyLzdKCvJ4" />
+    
+    <!-- Title and Meta Description -->
+    <title>DBD SPORTS - Official Merch</title>
+    <meta name="description" content="DBD SPORTS - Premium Sportswear & Streetwear Merch Collection. Shop shirts, shorts, and activewear online.">
+
+    <!-- Open Graph Meta Tags (Social Media & Search Engine Preview) -->
+    <meta property="og:site_name" content="DBD SPORTS">
+    <meta property="og:title" content="DBD SPORTS - Official Merch">
+    <meta property="og:description" content="Premium Sportswear & Streetwear Merch Collection">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dilonrayanthuwan2007-png.github.io/">
+
+    <!-- Structured Data (JSON-LD) for Google Search Site Name -->
+    <script type="application/ld+json">
+    {
+      "@context" : "https://schema.org",
+      "@type" : "WebSite",
+      "name" : "DBD SPORTS",
+      "alternateName" : ["DBD Sports Official", "DBD Merch"],
+      "url" : "https://dilonrayanthuwan2007-png.github.io/"
+    }
+    </script>
+
+    <style>
+        :root {
+            --bg-dark: #0f172a;
+            --card-bg: #1e293b;
+            --accent-red: #ef4444;
+            --text-light: #f8fafc;
+            --text-gray: #94a3b8;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: var(--bg-dark); color: var(--text-light); }
+        
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid var(--accent-red);
+            position: sticky; top: 0; z-index: 100;
+        }
+        .logo { 
+            font-size: 26px; 
+            font-weight: 900; 
+            color: var(--text-light); 
+            letter-spacing: 2px; 
+            cursor: pointer; 
+            user-select: none;
+        }
+        .logo span { color: var(--accent-red); }
+        .nav-actions { display: flex; gap: 10px; align-items: center; }
+        .cart-icon { background: var(--accent-red); padding: 8px 18px; border-radius: 20px; cursor: pointer; font-weight: bold; transition: 0.2s; }
+        .cart-icon:hover { background: #dc2626; }
+
+        /* Hero Banner */
+        .hero {
+            text-align: center;
+            padding: 70px 20px;
+            background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)), url('https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover; background-position: center;
+        }
+        .hero h1 { font-size: 45px; font-weight: 900; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; }
+        .hero p { color: var(--text-gray); font-size: 18px; margin-bottom: 20px; }
+        
+        /* Filter & Search Bar Section */
+        .filter-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+        .search-box {
+            flex: 1;
+            min-width: 250px;
+            position: relative;
+        }
+        .search-box input {
+            width: 100%;
+            padding: 12px 18px;
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 25px;
+            color: white;
+            font-size: 15px;
+            outline: none;
+            transition: 0.2s;
+        }
+        .search-box input:focus {
+            border-color: var(--accent-red);
+        }
+        .category-buttons {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        .cat-btn {
+            background: #1e293b;
+            color: var(--text-gray);
+            border: 1px solid #334155;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+        .cat-btn.active, .cat-btn:hover {
+            background: var(--accent-red);
+            color: white;
+            border-color: var(--accent-red);
+        }
+        .sort-select {
+            padding: 10px 15px;
+            background: #1e293b;
+            border: 1px solid #334155;
+            color: white;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* Product Section */
+        .products-section { padding: 40px 5%; }
+        .section-title { font-size: 26px; text-transform: uppercase; border-left: 5px solid var(--accent-red); padding-left: 12px; }
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        
+        .product-card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid #334155;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            position: relative;
+        }
+        .product-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.4); }
+        .product-img { width: 100%; height: 260px; object-fit: cover; }
+        
+        /* Image Thumbnails Slider */
+        .thumb-list { display: flex; gap: 5px; padding: 10px; overflow-x: auto; background: #0f172a; }
+        .thumb-img { width: 45px; height: 45px; border-radius: 5px; object-fit: cover; cursor: pointer; border: 2px solid transparent; opacity: 0.7; }
+        .thumb-img.active { border-color: var(--accent-red); opacity: 1; }
+
+        .product-info { padding: 18px; }
+        .product-title { font-size: 18px; margin-bottom: 6px; font-weight: bold; }
+        .product-price { color: var(--accent-red); font-size: 20px; font-weight: bold; margin-bottom: 8px; }
+        
+        /* Views Counter Badges (Admin Only) */
+        .views-badge {
+            display: inline-flex;
+            gap: 12px;
+            font-size: 13px;
+            margin-bottom: 12px;
+            background: #0f172a;
+            padding: 6px 12px;
+            border-radius: 15px;
+            border: 1px solid #334155;
+        }
+        .admin-real-views { color: #3b82f6; font-weight: bold; }
+
+        .size-select {
+            width: 100%; padding: 8px; margin-bottom: 12px; background: #0f172a;
+            color: white; border: 1px solid #334155; border-radius: 5px; font-weight: bold;
+        }
+        
+        .add-btn {
+            width: 100%; background: var(--accent-red); color: white; border: none; padding: 12px;
+            font-weight: bold; border-radius: 5px; cursor: pointer; text-transform: uppercase; transition: 0.2s;
+        }
+        .add-btn:hover { background: #dc2626; }
+        .pin-btn {
+            background: #3b82f6; color: white; border: none; padding: 8px; border-radius: 5px; cursor: pointer; margin-top: 10px; width: 100%; font-weight: bold;
+        }
+        .pin-btn:hover { background: #2563eb; }
+        .delete-prod-btn {
+            background: #ef4444; color: white; border: none; padding: 8px; border-radius: 5px; cursor: pointer; margin-top: 6px; width: 100%; font-weight: bold;
+        }
+        
+        /* Cart Modal */
+        .cart-modal {
+            display: none; position: fixed; top: 0; right: 0; width: 360px; height: 100%;
+            background: var(--card-bg); border-left: 3px solid var(--accent-red); padding: 20px; z-index: 200;
+            box-shadow: -10px 0 20px rgba(0,0,0,0.5);
+        }
+        .cart-modal.active { display: block; }
+        .close-cart { float: right; font-size: 28px; cursor: pointer; color: var(--text-gray); }
+        .close-cart:hover { color: white; }
+        .cart-items { margin-top: 25px; max-height: 60vh; overflow-y: auto; }
+        .cart-item { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; border-bottom: 1px solid #334155; padding-bottom: 10px; }
+        .checkout-btn { width: 100%; background: #22c55e; color: white; border: none; padding: 14px; border-radius: 5px; font-weight: bold; cursor: pointer; margin-top: 20px; font-size: 16px; }
+        .checkout-btn:hover { background: #16a34a; }
+        
+        /* Hidden Admin Panel Section */
+        .admin-panel {
+            display: none;
+            background: #1e293b;
+            padding: 25px;
+            margin: 20px 5%;
+            border-radius: 10px;
+            border: 2px dashed var(--accent-red);
+        }
+        .admin-panel.active { display: block; }
+        .admin-panel h3 { margin-bottom: 15px; color: #f8fafc; }
+        .admin-form { display: grid; gap: 10px; max-width: 500px; }
+        .admin-form input, .admin-form select { padding: 10px; background: #0f172a; border: 1px solid #334155; color: white; border-radius: 5px; }
+        .admin-form label { font-size: 14px; color: var(--text-gray); margin-top: 5px; }
+        .admin-form button { background: #22c55e; color: white; padding: 10px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; }
+        .loading-text { font-size: 13px; color: #3b82f6; display: none; }
+
+        footer { text-align: center; padding: 25px; background: #090d16; border-top: 1px solid #334155; color: var(--text-gray); font-size: 14px; margin-top: 40px; }
+    </style>
+
+    <!-- Firebase SDK Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
+</head>
+<body>
+
+    <!-- Header (Logo එක මත වාර 10ක් එක දිගට ක්ලික් කළ පසු Admin Panel ඇරේ) -->
+    <header>
+        <div class="logo" onclick="handleLogoClick()">DBD <span>SPORTS</span></div>
+        <div class="nav-actions">
+            <div class="cart-icon" onclick="toggleCart()">🛒 Cart (<span id="cart-count">0</span>)</div>
+        </div>
+    </header>
+
+    <!-- Admin Panel -->
+    <section class="admin-panel" id="admin-panel">
+        <h3>🔐 Admin Panel - Add New Item</h3>
+        <div class="admin-form">
+            <input type="text" id="new-name" placeholder="Item Name (e.g. DBD Sports Jacket)">
+            <input type="number" id="new-price" placeholder="Price in LKR (e.g. 4500)">
+            <select id="new-category">
+                <option value="shirts">Category: Shirts / Tops</option>
+                <option value="shorts">Category: Shorts / Bottoms</option>
+            </select>
+            <label for="new-img-files">Select Product Images (Select up to 10 images):</label>
+            <input type="file" id="new-img-files" accept="image/*" multiple>
+            <span class="loading-text" id="upload-status">Compressing & Uploading images...</span>
+            <button id="add-prod-btn" onclick="addNewProduct()">+ Add Product</button>
+        </div>
+    </section>
+
+    <!-- Hero Banner -->
+    <section class="hero">
+        <h1>DBD SPORTS</h1>
+        <p>Premium Sportswear & Streetwear Merch Collection</p>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section">
+        
+        <!-- Search and Filter Bar -->
+        <div class="filter-container">
+            <h2 class="section-title">Featured Merch</h2>
+            
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="🔍 Search products..." onkeyup="filterProducts()">
+            </div>
+
+            <div class="category-buttons">
+                <button class="cat-btn active" onclick="setCategory('all', this)">All</button>
+                <button class="cat-btn" onclick="setCategory('shirts', this)">Shirts</button>
+                <button class="cat-btn" onclick="setCategory('shorts', this)">Shorts</button>
+                <select class="sort-select" id="sort-select" onchange="renderProducts()">
+                    <option value="newest">Sort: Newest / Pinned First</option>
+                    <option value="oldest">Sort: Oldest First</option>
+                    <option value="low-high">Price: Low to High</option>
+                    <option value="high-low">Price: High to Low</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="product-grid" id="product-grid">Loading Products...</div>
+    </section>
+
+    <!-- Cart Slide-out -->
+    <div class="cart-modal" id="cart-modal">
+        <span class="close-cart" onclick="toggleCart()">&times;</span>
+        <h2>Your Cart</h2>
+        <div class="cart-items" id="cart-items"></div>
+        <h3 style="margin-top: 20px; border-top: 1px solid #334155; padding-top: 10px;">Total: LKR <span id="cart-total">0</span></h3>
+        <button class="checkout-btn" onclick="sendWhatsAppOrder()">Order via WhatsApp 💬</button>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2026 DBD SPORTS. All Rights Reserved.
+    </footer>
+
+    <script>
+        // Firebase Configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyBxNhlOu1Z_DjwxIb6jdq-RoN6i6XiCIfo",
+          authDomain: "dbd-spots.firebaseapp.com",
+          projectId: "dbd-spots",
+          storageBucket: "dbd-spots.firebasestorage.app",
+          messagingSenderId: "952742146884",
+          appId: "1:952742146884:web:b144d5dfea7150c2e9dd11"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const database = firebase.database();
+
+        let products = [];
+        let cart = [];
+        let isAdminLoggedIn = false;
+        let currentCategory = 'all';
+        let hasCountedViews = false;
+
+        // 10 Times Click Logic for Admin
+        let logoClickCount = 0;
+        let logoClickTimer = null;
+
+        function handleLogoClick() {
+            logoClickCount++;
+            clearTimeout(logoClickTimer);
+
+            if (logoClickCount === 10) {
+                logoClickCount = 0;
+                toggleAdminPanel();
+            } else {
+                // තත්පර 1.5ක් ඇතුළත ක්ලික් කිරීම් 10 සම්පූර්ණ කළ යුතුයි
+                logoClickTimer = setTimeout(() => {
+                    logoClickCount = 0;
+                }, 1500);
+            }
+        }
+
+        database.ref('products').on('value', (snapshot) => {
+            const data = snapshot.val();
+            products = [];
+            if (data) {
+                for (let key in data) {
+                    let item = data[key];
+                    let imagesArray = item.images || (item.img ? [item.img] : []);
+                    let category = item.category || 'shirts';
+                    products.push({ 
+                        firebaseId: key, 
+                        ...item, 
+                        category: category, 
+                        images: imagesArray, 
+                        createdAt: item.createdAt || 0,
+                        realViews: item.realViews || 0
+                    });
+                }
+
+                if (!hasCountedViews && !isAdminLoggedIn) {
+                    hasCountedViews = true;
+                    products.forEach(p => {
+                        database.ref('products/' + p.firebaseId).update({
+                            realViews: (p.realViews || 0) + 1
+                        });
+                    });
+                }
+            } else {
+                const initialProducts = [
+                    { name: "DBD Performance Graphic Tee", price: 3800, category: "shirts", images: ["https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=600&q=80"], createdAt: 100, realViews: 5 },
+                    { name: "DBD Heavyweight Street Hoodie", price: 7800, category: "shirts", images: ["https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=600&q=80"], createdAt: 200, realViews: 12 },
+                    { name: "DBD Pro Athletic Shorts", price: 3200, category: "shorts", images: ["https://images.unsplash.com/photo-1591195853828-11db59a44f6b?auto=format&fit=crop&w=600&q=80"], createdAt: 300, realViews: 8 }
+                ];
+                initialProducts.forEach(item => database.ref('products').push(item));
+            }
+            renderProducts();
+        });
+
+        function renderProducts() {
+            const grid = document.getElementById('product-grid');
+            const searchValue = document.getElementById('search-input').value.toLowerCase();
+            const sortOption = document.getElementById('sort-select').value;
+
+            let filteredProducts = products.filter(p => {
+                const matchesCategory = (currentCategory === 'all') || (p.category === currentCategory);
+                const matchesSearch = p.name.toLowerCase().includes(searchValue);
+                return matchesCategory && matchesSearch;
+            });
+
+            if (sortOption === 'newest') {
+                filteredProducts.sort((a, b) => b.createdAt - a.createdAt);
+            } else if (sortOption === 'oldest') {
+                filteredProducts.sort((a, b) => a.createdAt - b.createdAt);
+            } else if (sortOption === 'low-high') {
+                filteredProducts.sort((a, b) => a.price - b.price);
+            } else if (sortOption === 'high-low') {
+                filteredProducts.sort((a, b) => b.price - a.price);
+            }
+
+            if(filteredProducts.length === 0) {
+                grid.innerHTML = "<p style='color: var(--text-gray); grid-column: 1/-1; text-align: center; padding: 40px 0;'>No matching products found.</p>";
+                return;
+            }
+
+            grid.innerHTML = filteredProducts.map((p) => {
+                const originalIndex = products.indexOf(p);
+                const mainImg = p.images.length > 0 ? p.images[0] : '';
+                const thumbsHtml = p.images.length > 1 ? `
+                    <div class="thumb-list">
+                        ${p.images.map((imgUrl, imgIdx) => `
+                            <img src="${imgUrl}" class="thumb-img ${imgIdx === 0 ? 'active' : ''}" onclick="changeMainImg(${originalIndex}, '${imgUrl}', this)">
+                        `).join('')}
+                    </div>
+                ` : '';
+
+                return `
+                    <div class="product-card">
+                        <img src="${mainImg}" class="product-img" id="main-img-${originalIndex}" alt="${p.name}" loading="lazy">
+                        ${thumbsHtml}
+                        <div class="product-info">
+                            <div class="product-title">${p.name}</div>
+                            <div class="product-price">LKR ${Number(p.price).toLocaleString()}</div>
+                            
+                            ${isAdminLoggedIn ? `
+                                <div class="views-badge">
+                                    <span class="admin-real-views" title="Actual total views">👁️ Real Views: ${p.realViews}</span>
+                                </div>
+                            ` : ''}
+
+                            <select class="size-select" id="size-${originalIndex}">
+                                <option value="Small (S)">Size: Small (S)</option>
+                                <option value="Medium (M)" selected>Size: Medium (M)</option>
+                                <option value="Large (L)">Size: Large (L)</option>
+                                <option value="XL">Size: XL</option>
+                                <option value="XXL">Size: XXL</option>
+                            </select>
+                            <button class="add-btn" onclick="addToCart(${originalIndex})">Add To Cart</button>
+                            ${isAdminLoggedIn ? `
+                                <button class="pin-btn" onclick="pinToTop('${p.firebaseId}')">📌 Move to Top (Pin)</button>
+                                <button class="delete-prod-btn" onclick="deleteProduct('${p.firebaseId}')">🗑️ Delete Product</button>
+                            ` : ''}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function setCategory(cat, btn) {
+            currentCategory = cat;
+            document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            renderProducts();
+        }
+
+        function filterProducts() {
+            renderProducts();
+        }
+
+        function changeMainImg(productIndex, imgUrl, thumbElement) {
+            document.getElementById(`main-img-${productIndex}`).src = imgUrl;
+            const parent = thumbElement.parentElement;
+            const thumbs = parent.getElementsByClassName('thumb-img');
+            for(let t of thumbs) { t.classList.remove('active'); }
+            thumbElement.classList.add('active');
+        }
+
+        function addToCart(index) {
+            const product = products[index];
+            const selectedSize = document.getElementById(`size-${index}`).value;
+            
+            cart.push({ ...product, size: selectedSize, mainImg: document.getElementById(`main-img-${index}`).src });
+            updateCart();
+            toggleCart();
+        }
+
+        function updateCart() {
+            document.getElementById('cart-count').innerText = cart.length;
+            const itemsContainer = document.getElementById('cart-items');
+            
+            if(cart.length === 0) {
+                itemsContainer.innerHTML = "<p style='color: var(--text-gray); margin-top:20px;'>Your cart is empty.</p>";
+            } else {
+                itemsContainer.innerHTML = cart.map((item, index) => `
+                    <div class="cart-item">
+                        <div>
+                            <strong>${item.name}</strong><br>
+                            <small style="color: var(--text-gray);">${item.size}</small><br>
+                            <small style="color: var(--accent-red);">LKR ${Number(item.price).toLocaleString()}</small>
+                        </div>
+                        <span style="color:#ef4444; font-weight:bold; cursor:pointer; font-size:20px;" onclick="removeFromCart(${index})">&times;</span>
+                    </div>
+                `).join('');
+            }
+            
+            const total = cart.reduce((sum, item) => sum + Number(item.price), 0);
+            document.getElementById('cart-total').innerText = total.toLocaleString();
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCart();
+        }
+
+        function toggleCart() {
+            document.getElementById('cart-modal').classList.toggle('active');
+        }
+
+        /* --- Admin Panel Functions --- */
+        function toggleAdminPanel() {
+            if (!isAdminLoggedIn) {
+                let password = prompt("Enter Admin Password:");
+                if (password === "Dilon gee @2") {
+                    isAdminLoggedIn = true;
+                    document.getElementById('admin-panel').classList.add('active');
+                    renderProducts();
+                    alert("Admin Access Granted!");
+                } else {
+                    alert("Incorrect Password!");
+                }
+            } else {
+                document.getElementById('admin-panel').classList.toggle('active');
+            }
+        }
+
+        function compressImage(file, maxWidth = 500, quality = 0.6) {
+            return new Promise((resolve) => {
+                const reader = new FileReader();
+                reader.readAsDataURL(file);
+                reader.onload = (event) => {
+                    const img = new Image();
+                    img.src = event.target.result;
+                    img.onload = () => {
+                        const canvas = document.createElement('canvas');
+                        let width = img.width;
+                        let height = img.height;
+
+                        if (width > maxWidth) {
+                            height = Math.round((height * maxWidth) / width);
+                            width = maxWidth;
+                        }
+
+                        canvas.width = width;
+                        canvas.height = height;
+                        const ctx = canvas.getContext('2d');
+                        ctx.drawImage(img, 0, 0, width, height);
+                        resolve(canvas.toDataURL('image/jpeg', quality));
+                    };
+                };
+            });
+        }
+
+        async function addNewProduct() {
+            const name = document.getElementById('new-name').value;
+            const price = parseFloat(document.getElementById('new-price').value);
+            const category = document.getElementById('new-category').value;
+            const fileInput = document.getElementById('new-img-files');
+            const statusText = document.getElementById('upload-status');
+            const addBtn = document.getElementById('add-prod-btn');
+
+            if (!name || !price || fileInput.files.length === 0) {
+                alert("Please fill all details and select at least one image file!");
+                return;
+            }
+
+            if (fileInput.files.length > 10) {
+                alert("You can only upload a maximum of 10 images per product!");
+                return;
+            }
+
+            statusText.style.display = 'block';
+            addBtn.disabled = true;
+
+            const files = Array.from(fileInput.files);
+            
+            try {
+                const compressedImages = await Promise.all(files.map(file => compressImage(file)));
+
+                database.ref('products').push({
+                    name: name,
+                    price: price,
+                    category: category,
+                    images: compressedImages,
+                    createdAt: Date.now(),
+                    realViews: 0
+                }).then(() => {
+                    document.getElementById('new-name').value = '';
+                    document.getElementById('new-price').value = '';
+                    fileInput.value = '';
+                    statusText.style.display = 'none';
+                    addBtn.disabled = false;
+                    alert("New product added successfully!");
+                }).catch(error => {
+                    statusText.style.display = 'none';
+                    addBtn.disabled = false;
+                    alert("Error adding product: " + error.message);
+                });
+            } catch (err) {
+                statusText.style.display = 'none';
+                addBtn.disabled = false;
+                alert("Error processing images!");
+            }
+        }
+
+        function pinToTop(firebaseId) {
+            database.ref('products/' + firebaseId).update({
+                createdAt: Date.now()
+            }).then(() => {
+                alert("Product moved to the top successfully!");
+            }).catch(error => {
+                alert("Error pinning product: " + error.message);
+            });
+        }
+
+        function deleteProduct(firebaseId) {
+            if (confirm("Are you sure you want to delete this product?")) {
+                database.ref('products/' + firebaseId).remove()
+                .then(() => alert("Product deleted successfully!"))
+                .catch(error => alert("Error deleting product: " + error.message));
+            }
+        }
+
+        /* --- WhatsApp Order Function --- */
+        function sendWhatsAppOrder() {
+            if (cart.length === 0) { alert('Your cart is empty!'); return; }
+            
+            let phone = "94740597963"; 
+            
+            let message = "Hi DBD SPORTS! I would like to place an order:%0A%0A";
+            cart.forEach((item, i) => {
+                message += `${i + 1}. ${item.name} - ${item.size} (LKR ${Number(item.price).toLocaleString()})%0A`;
+            });
+            const total = cart.reduce((sum, item) => sum + Number(item.price), 0);
+            message += `%0A*Total Amount: LKR ${total.toLocaleString()}*`;
+            
+            window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
+        }
+    </script>
+</body>
+</html>
